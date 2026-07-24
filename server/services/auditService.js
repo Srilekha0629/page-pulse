@@ -39,19 +39,39 @@ class AuditService {
 
       return response;
     } catch (error) {
-      if (error.code === 'ECONNABORTED' || error.code === 'ETIMEDOUT') {
+      const errCode = error.code || '';
+      const errMsg = error.message || '';
+      const errCause = (error.cause && error.cause.code) || '';
+
+      if (errCode === 'ECONNABORTED' || errCode === 'ETIMEDOUT' || errMsg.includes('timeout') || errMsg === 'TIMEOUT') {
         const timeoutError = new Error('Request timed out');
         timeoutError.message = 'TIMEOUT';
         throw timeoutError;
       }
       
-      if (error.code === 'ENOTFOUND' || error.code === 'EAI_AGAIN') {
+      if (
+        errCode === 'ENOTFOUND' ||
+        errCode === 'EAI_AGAIN' ||
+        errCause === 'ENOTFOUND' ||
+        errCause === 'EAI_AGAIN' ||
+        errMsg.includes('ENOTFOUND') ||
+        errMsg.includes('EAI_AGAIN') ||
+        errMsg === 'DNS_FAILURE'
+      ) {
         const dnsError = new Error('DNS lookup failed');
         dnsError.message = 'DNS_FAILURE';
         throw dnsError;
       }
 
-      if (error.code === 'ECONNREFUSED' || error.code === 'ENETUNREACH') {
+      if (
+        errCode === 'ECONNREFUSED' ||
+        errCode === 'ENETUNREACH' ||
+        errCause === 'ECONNREFUSED' ||
+        errCause === 'ENETUNREACH' ||
+        errMsg.includes('ECONNREFUSED') ||
+        errMsg.includes('ENETUNREACH') ||
+        errMsg === 'UNREACHABLE'
+      ) {
         const unreachableError = new Error('Website unreachable');
         unreachableError.message = 'UNREACHABLE';
         throw unreachableError;

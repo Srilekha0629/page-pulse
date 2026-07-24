@@ -5,7 +5,16 @@ import './SearchBar.css';
 const SearchBar = ({ url, setUrl, loading, onSubmit, onClear }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(e);
+    let formattedUrl = url.trim();
+    if (formattedUrl && !/^https?:\/\//i.test(formattedUrl)) {
+      formattedUrl = `https://${formattedUrl}`;
+      setUrl(formattedUrl);
+      setTimeout(() => {
+        onSubmit(e);
+      }, 0);
+    } else {
+      onSubmit(e);
+    }
   };
 
   const handleClear = () => {
@@ -17,7 +26,7 @@ const SearchBar = ({ url, setUrl, loading, onSubmit, onClear }) => {
     <form className="search-bar" onSubmit={handleSubmit}>
       <div className="search-input-wrapper">
         <input
-          type="url"
+          type="text"
           className="search-input"
           placeholder="Enter website URL (e.g., https://example.com)"
           value={url}
