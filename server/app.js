@@ -5,7 +5,7 @@ const auditRoutes = require('./routes/auditRoutes');
 const app = express();
 
 // Normalize CLIENT_URL to prevent trailing slash matching issues
-const rawClientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+const rawClientUrl = process.env.CLIENT_URL || 'https://page-pulse-lime-mu.vercel.app';
 const normalizedClientUrl = rawClientUrl.replace(/\/$/, '');
 const allowedOrigins = Array.from(new Set([
   normalizedClientUrl,
