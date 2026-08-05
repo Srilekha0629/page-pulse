@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar';
 import ResultCard from './components/ResultCard';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorAlert from './components/ErrorAlert';
+import Footer from './components/Footer';
 import { analyzeWebsite } from './services/api';
 import './styles/App.css';
 
@@ -132,13 +133,7 @@ function App() {
           </div>
         )}
 
-        <footer className="app-footer">
-          <div className="footer-content">
-            <h2 className="footer-title">Page Pulse</h2>
-            <p className="footer-subtitle">Website Performance &amp; SEO Analyzer</p>
-            <p className="footer-credit">Developed by Srilekha • 2026</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
