@@ -36,45 +36,53 @@ The project consists of a React frontend with a glass-morphism design and a Node
 
 ## Folder Structure
 page-pulse/
+│
 ├── client/
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── SearchBar.jsx
-│ │ │ ├── SearchBar.css
-│ │ │ ├── ResultCard.jsx
-│ │ │ ├── ResultCard.css
-│ │ │ ├── LoadingSpinner.jsx
-│ │ │ ├── LoadingSpinner.css
-│ │ │ ├── ErrorAlert.jsx
-│ │ │ └── ErrorAlert.css
-│ │ ├── services/
-│ │ │ └── api.js
-│ │ ├── styles/
-│ │ │ └── App.css
-│ │ ├── App.jsx
-│ │ └── main.jsx
-│ ├── index.html
-│ ├── vite.config.js
-│ └── package.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── SearchBar.jsx
+│   │   │   ├── SearchBar.css
+│   │   │   ├── ResultCard.jsx
+│   │   │   ├── ResultCard.css
+│   │   │   ├── LoadingSpinner.jsx
+│   │   │   ├── LoadingSpinner.css
+│   │   │   ├── ErrorAlert.jsx
+│   │   │   ├── ErrorAlert.css
+│   │   │   └── Footer.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── styles/
+│   │   │   └── App.css
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
 │
 ├── server/
-│ ├── controllers/
-│ │ └── auditController.js
-│ ├── routes/
-│ │ └── auditRoutes.js
-│ ├── services/
-│ │ ├── auditService.js
-│ │ └── urlValidator.js
-│ ├── tests/
-│ │ └── audit.test.js
-│ ├── app.js
-│ ├── server.js
-│ └── package.json
+│   ├── controllers/
+│   │   └── auditController.js
+│   │
+│   ├── routes/
+│   │   └── auditRoutes.js
+│   │
+│   ├── services/
+│   │   ├── auditService.js
+│   │   └── urlValidator.js
+│   │
+│   ├── tests/
+│   │   └── audit.test.js
+│   │
+│   ├── app.js
+│   ├── server.js
+│   └── package.json
 │
 ├── .gitignore
 └── README.md
-
-text
 
 ## Installation
 
