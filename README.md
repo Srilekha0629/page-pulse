@@ -34,56 +34,52 @@ The project consists of a React frontend with a glass-morphism design and a Node
 - Axios
 - Cheerio
 
-## Folder Structure
+## 📂 Project Structure
+
+```text
 page-pulse/
-│
 ├── client/
+│   ├── public/
+│   │   └── vite.svg
 │   ├── src/
+│   │   ├── assets/
 │   │   ├── components/
-│   │   │   ├── SearchBar.jsx
-│   │   │   ├── SearchBar.css
-│   │   │   ├── ResultCard.jsx
-│   │   │   ├── ResultCard.css
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.jsx
 │   │   │   ├── LoadingSpinner.jsx
-│   │   │   ├── LoadingSpinner.css
-│   │   │   ├── ErrorAlert.jsx
-│   │   │   ├── ErrorAlert.css
-│   │   │   └── Footer.jsx
-│   │   │
+│   │   │   ├── ReportCard.jsx
+│   │   │   ├── SearchBar.jsx
+│   │   │   └── SeoMetrics.jsx
 │   │   ├── services/
 │   │   │   └── api.js
-│   │   │
-│   │   ├── styles/
-│   │   │   └── App.css
-│   │   │
+│   │   ├── App.css
 │   │   ├── App.jsx
+│   │   ├── index.css
 │   │   └── main.jsx
-│   │
+│   ├── .gitignore
 │   ├── index.html
-│   ├── vite.config.js
-│   └── package.json
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
 │
 ├── server/
 │   ├── controllers/
 │   │   └── auditController.js
-│   │
 │   ├── routes/
 │   │   └── auditRoutes.js
-│   │
 │   ├── services/
-│   │   ├── auditService.js
-│   │   └── urlValidator.js
-│   │
-│   ├── tests/
-│   │   └── audit.test.js
-│   │
+│   │   └── auditService.js
+│   ├── utils/
 │   ├── app.js
 │   ├── server.js
-│   └── package.json
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── .env
+│   └── .gitignore
 │
 ├── .gitignore
 └── README.md
-
+```
 ## Installation
 
 ### Prerequisites
